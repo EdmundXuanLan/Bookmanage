@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="do,action" />
+	<constant name="struts.serve.static.browserCache" value="false"/>
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.custom.i18n.resources" value="globalMessage"/>
+	
+	
+	<package name="Bookmanage" extends="struts-default" namespace="/Bookmanage" >
+		<interceptors>
+ 			<interceptor name="loginInterceptor" class="com.zhbit.Bookmanage.interceptor.LoginInterceptor"/>
+  		</interceptors>
+	
+		<action name="loginAction" class="loginAction" method="execute">
+			<result type="redirect" name="success">/user/Users_login_success.jsp</result>
+			<result type="redirect" name="input">/user/Users_login.jsp</result>
+		</action>
+		<action name="addAction" class="visitorAction" method="add">
+		
+			<result type="redirect" name="success">/visitor/visitor_login_success.jsp</result>
+			<result name="input">/visitor/visitor_register.jsp</result>
+		</action>
+		<action name="altermessageAction" class="visitorAction" method="updatemessage">
+			<result type="redirect" name="success">/visitor/visitor_login_success.jsp</result>
+			<result name="input">/visitor/visitor_altermessage.jsp</result>
+		</action>
+		<action name="alterpasswordAction" class="visitorAction" method="updatepassword">
+			<result type="redirect" name="success">/visitor/visitor_login_success.jsp</result>
+			<result name="input">/visitor/visitor_alterpassword.jsp</result>
+			
+		</action>
+		<action name="visitorLoginAction" class="visitorAction" method="execute">
+			<result type="redirect" name="success">/visitor/visitor_login_success.jsp</result>
+			<result name="input">/visitor/visitor_login.jsp</result>			
+		</action>
+		<action name="visitorLogoutAction" class="visitorAction" method="logout">
+			<result type="redirect" name="success">/visitor/visitor_index.jsp</result>
+				
+		</action>
+		<action name="showSearchAction" class="showSearchAction" method="execute">
+			<interceptor-ref name="loginInterceptor"/>	
+			<interceptor-ref name="defaultStack"/>
+			<result name="login">/visitor/visitor_login.jsp</result>
+			<result type="redirect" name="success">/visitor/visitor_search.jsp</result>
+			<result name="input">/visitor/visitor_main.jsp</result>	
+			
+		</action>
+		<action name="chackStyleAction" class="showSearchAction" method="ChackStyle">
+			<interceptor-ref name="loginInterceptor"/>	
+			<interceptor-ref name="defaultStack"/>
+			<result name="login">/visitor/visitor_login.jsp</result>
+			<result type="redirect" name="success">/visitor/visitor_search.jsp</result>
+			<result name="input">/visitor/visitor_main.jsp</result>		
+		</action>
+		
+	</package>
+	
+	
+</struts>

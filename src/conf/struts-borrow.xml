@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="do,action" />
+	<constant name="struts.serve.static.browserCache" value="false"/>
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<package name="BorrowS" extends="struts-default" namespace="/BorrowAction" >
+		<action name="Borrow_queryAction" class="Borrow_queryAction" >
+			<result type="redirect" name="querySuccess">/Borrow/Borrow_query_success.jsp</result>
+		</action>
+		<action name="Borrow_addAction" class="Borrow_addAction" >
+			<result type="redirect" name="addSuccess">/Borrow/Borrow_add_success.jsp</result>
+			<result type="redirect" name="addFaild">/Borrow/Borrow_add_faild.jsp</result>
+			<result type="redirect" name="addIdWrong">/Borrow/Borrow_add_IdWrong.jsp</result>
+			<result  name="input">/Borrow/Borrow_add.jsp</result>
+		</action>
+		<action name="Borrow_deleteAction" class="Borrow_deleteAction" >
+			<result type="redirect" name="deleteSuccess">/Borrow/Borrow_delete_success.jsp</result>
+			<result type="redirect" name="deleteFaild">/Borrow/Borrow_delete_faild.jsp</result>
+			<result type="redirect" name="borrowing">/Borrow/Borrow_delete_borrowing.jsp</result>
+		</action>
+		<action name="Borrow_modifyAction" class="Borrow_modifyAction" >
+			<result type="redirect" name="modifySuccess">/Borrow/Borrow_modify.jsp</result>
+			<result type="redirect" name="returnEd">/Borrow/Borrow_modify_saveEd.jsp</result>
+			<result type="redirect" name="saveEd">/Borrow/Borrow_modify_saveEd.jsp</result>
+		</action>
+		<action name="Borrow_saveAction" class="Borrow_saveAction" >
+			<result type="redirect" name="saveSuccess">/Borrow/Borrow_modify_success.jsp</result>
+			<result type="redirect" name="saveEd">/Borrow/Borrow_modify_saveEd.jsp</result>
+			<result type="redirect" name="saveFaild">/Borrow/Borrow_modify_IdWrong.jsp</result>
+		</action>
+		<action name="Borrow_returnbookAction" class="Borrow_returnbookAction" >
+			<result type="redirect" name="returnSuccess">/Borrow/Borrow_return_success.jsp</result>
+			<result type="redirect" name="returnbookFaild">/Borrow/Borrow_return_faild.jsp</result>
+			<result type="redirect" name="returnEd">/Borrow/Borrow_return_returnEd.jsp</result>
+		</action>
+		<action name="Borrow_findAction" class="Borrow_findAction" >
+			<result type="redirect" name="findSuccess">/Borrow/Borrow_find_success.jsp</result>
+			<result type="redirect" name="findFaild">/Borrow/Borrow_find_faild.jsp</result>
+			<result type="redirect" name="findNullId">/Borrow/Borrow_find_IdWrong.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="do,action" />
+	<constant name="struts.serve.static.browserCache" value="false"/>
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<package name="Reader" extends="struts-default" namespace="/Reader" >
+		<action name="Reader_query" class="Reader_query" >
+			<result type="redirect" name="querySuccess">/Reader/Reader_querySuccess.jsp</result>
+		</action>
+		<action name="Reader_add" class="Reader_add" >
+			<result type="redirect" name="Success">/Reader/Reader_addSuccess.jsp</result>
+			<result type="redirect" name="Faild">/Reader/Reader_addFaild.jsp</result>
+			<result name="input">/Reader/Reader_add.jsp</result>
+		</action>
+		<action name="Reader_delete" class="Reader_delete" >
+			<result type="redirect" name="Success">/Reader/Reader_deleteSuccess.jsp</result>
+			<result type="redirect" name="Faild">/Reader/Reader_deleteFaild.jsp</result>
+			<result type="redirect" name="Borrowing">/Reader/Reader_Borrowing.jsp</result>
+		</action>
+		<action name="Reader_modify" class="Reader_modify" >
+			<result type="redirect" name="Success">/Reader/Reader_modify.jsp</result>
+		</action>
+		<action name="Reader_save" class="Reader_save" >
+			<result type="redirect" name="Success">/Reader/Reader_saveSuccess.jsp</result>
+			<result type="redirect" name="Faild">/Reader/Reader_saveFaild.jsp</result>
+		</action>
+		<action name="Reader_find" class="Reader_find" >
+			<result type="redirect" name="Success">/Reader/Reader_findSuccess.jsp</result>
+			
+			<result type="redirect" name="Faild">/Reader/Reader_findFaild.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+  		"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+  		"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<validators>
+	
+	<validator type="requiredstring" short-circuit="true">
+		<param name="fieldName">readers.readerid</param>
+		<message> 用户名不能为空</message>
+	</validator>
+	<validator type="requiredstring" short-circuit="true">
+		<param name="fieldName">readers.readername</param>
+		<message> 姓名不能为空</message>
+	</validator>
+	<validator type="requiredstring" short-circuit="true">
+		<param name="fieldName">readers.readerpassword</param>
+		<message> 密码不能为空</message>
+	</validator>
+	<validator type="requiredstring" short-circuit="true">
+		<param name="fieldName">readers.phonenumber</param>
+		<message> 联系方式不能为空</message>
+	</validator>
+	<field name="readers.readerpassword">
+		<field-validator type="stringlength">
+			<param name="trim">true</param>
+			<param name="maxLength">16</param>
+			<param name="minLength">6</param>
+			<message>长度需为${minLength}到${maxLength}之间</message>
+		</field-validator>
+	</field>
+	<field name="readers.phonenumber">
+		<field-validator type="stringlength">
+			<param name="trim">true</param>
+			<param name="maxLength">11</param>
+			<param name="minLength">1</param>
+			<message>号码位数不足</message>
+		</field-validator>
+	</field>
+</validators>

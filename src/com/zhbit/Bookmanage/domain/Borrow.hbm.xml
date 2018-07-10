@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zhbit.Bookmanage.domain.Borrow" table="borrow">
+		<!-- 配置主键 -->
+		<id name="borrowid" column="borrowid">
+			<generator class="native" /> <!-- 配置的是自动增长标识列 -->
+		</id>
+		<property name="bookid" />
+		<property name="readerid" />
+		<property name="borrowdate" />
+		<property name="returndate" />
+		<property name="readername" />
+		<property name="bookname" />
+		<property name="bookfee" />
+	</class>
+</hibernate-mapping>

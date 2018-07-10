@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zhbit.Bookmanage.domain">
+	<class name="Notice" table="Notice">
+		<id name="id" column="Nno">
+			<generator class="native"/>
+		</id>
+		<property name="title" length="200" column="Ntitle"/>
+		<property name="content" type="text" column="Ncontent"></property>
+		<property name="editor" length="50" column="Neditor"></property>
+		<property name="createTime" type="timestamp" column="NcreateTime"></property>
+		
+		<many-to-one name="type" class="Type" column="Ntype"
+				cascade="save-update" lazy="false"/>
+	</class>
+</hibernate-mapping>

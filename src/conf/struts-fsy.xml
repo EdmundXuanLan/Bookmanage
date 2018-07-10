@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="do,action" />
+	<constant name="struts.serve.static.browserCache" value="false"/>
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.objectFactory" value="spring" />
+	
+<!-- made by songyao Fang-->
+	<package name="type" extends="struts-default" namespace="/type">
+		<action name="typeaction" class="typeAction">
+			<result name="input">/WEB-INF/portal/index.jsp</result>
+		</action>
+	</package>
+	
+	<package name="notice" namespace="/notice" extends="struts-default">
+		<action name="notice_*" class="noticeAction" method="{1}">
+			<result name="showNoticeDetail">/WEB-INF/portal/showNoticeDetailById.jsp</result>
+			<result name="showAddNotice">/WEB-INF/system/noticeAdd.jsp</result>
+			<result name="showAllNotice">/WEB-INF/system/showAllNoticeList.jsp</result>
+			<result name="noticeEdit">/WEB-INF/system/noticeEdit.jsp</result>
+			<result name="input">/WEB-INF/portal/index.jsp</result>
+			
+		</action>
+		<action name="validateAdd" class="noticeAction">
+			<result name="showAllNotice" >/WEB-INF/system/showAllNoticeList.jsp</result>
+		</action>
+	</package>
+	
+</struts>

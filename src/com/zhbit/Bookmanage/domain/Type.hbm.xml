@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zhbit.Bookmanage.domain">
+	<class name="Type" >
+		<id name="id" column="Tno">
+			<generator class="native"/>
+		</id>
+		<property name="typeName" length="10" column="TtypeName"/>
+		<set name="notice" cascade="save-update" inverse="false" >
+			<key column="Ntype" not-null="false"/>
+			<one-to-many class="Notice"/>
+		</set>
+	</class>
+</hibernate-mapping>

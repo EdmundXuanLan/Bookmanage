@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="com.zhbit.Bookmanage.domain.Readers" table="readers">
+  <id name="readerid" column="readerid">
+   <generator class="assigned"/>
+   <!-- 配置的是手动填入 -->
+  </id>
+  <property  name="readername"/>
+    <property  name="readersex"/>
+  <property  name="readerpassword"/>
+  <property  name="phonenumber"/>
+ <set name="Borrow" table="Borrow" cascade="all">
+			<key>
+				<column name="readerid"/>
+			</key>
+			<!--  one-to-many表示一对多, class表示集合中存放的对象是Order对象 -->
+			<one-to-many class="com.zhbit.Bookmanage.domain.Borrow"/>
+		</set>
+
+  
+ </class>
+</hibernate-mapping>

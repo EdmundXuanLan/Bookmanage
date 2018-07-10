@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+  		"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+  		"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<validators>
+	
+	
+	<validator type="requiredstring" short-circuit="true">
+		<param name="fieldName">readers.readername</param>
+		<message> 姓名不能为空</message>
+	</validator>
+	
+	<validator type="requiredstring" short-circuit="true">
+		<param name="fieldName">readers.phonenumber</param>
+		<message> 联系方式不能为空</message>
+	</validator>
+
+</validators>

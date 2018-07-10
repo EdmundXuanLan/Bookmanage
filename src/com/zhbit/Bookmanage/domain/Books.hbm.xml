@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zhbit.Bookmanage.domain.Books" table="books">
+		<id name="bookid" column="bookid">
+			<generator class="assigned">
+			</generator>
+		</id>
+		<property name="bookname" />
+		<property name="bookstyleno" />
+		<property name="bookauthor" />
+		<property name="bookpub" />
+		<property name="bookpubdate" />
+		<property name="bookindate" />
+		<property name="isborrowed" />
+		<property name="bookprice" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="do,action" />
+	<constant name="struts.serve.static.browserCache" value="false"/>
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<package name="BookS" extends="struts-default" namespace="/BooksAction" >
+		<action name="Books_queryAction" class="Books_queryAction" >
+			<result type="redirect" name="querySuccess">/books/Books_query_success.jsp</result>
+		</action>
+		<action name="Books_addAction" class="Books_addAction" >
+			<result type="redirect" name="addSuccess">/books/Books_add_success.jsp</result>
+			<result type="redirect" name="addFaild">/books/Books_add_faild.jsp</result>
+			<result  name="input">/books/Books_add.jsp</result>
+		</action>
+		<action name="Books_deleteAction" class="Books_deleteAction" >
+			<result type="redirect" name="deleteSuccess">/books/Books_delete_success.jsp</result>
+			<result type="redirect" name="deleteFaild">/books/Books_delete_faild.jsp</result>
+		</action>
+		<action name="Books_modifyAction" class="Books_modifyAction" >
+			<result type="redirect" name="modifySuccess">/books/Books_modify.jsp</result>
+			<result type="redirect" name="returnEd">/books/Books_modify_saveEd.jsp</result>
+			<result type="redirect" name="saveEd">/books/Books_modify_saveEd.jsp</result>
+		</action>
+		<action name="Books_saveAction" class="Books_saveAction" >
+			<result type="redirect" name="saveSuccess">/books/Books_modify_success.jsp</result>
+			<result type="redirect" name="saveEd">/books/Books_modify_saveEd.jsp</result>
+			<result type="redirect" name="saveFaild">/books/Books_modify_saveEd.jsp</result>
+		</action>
+		<action name="Books_findAction" class="Books_findAction" >
+			<result type="redirect" name="findSuccess">/books/Books_find_success.jsp</result>
+			<result type="redirect" name="findFaild">/books/Books_find_faild.jsp</result>
+			<result type="redirect" name="findNullId">/books/Books_find_faild.jsp</result>
+		</action>
+	</package>
+
+	
+	
+</struts>
